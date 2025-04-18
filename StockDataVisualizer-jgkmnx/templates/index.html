@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data Visualizer</title>
+</head>
+<body>
+    <h1>Stock Data Visualizer</h1>
+    <form method="POST">
+        <label>Symbol:</label>
+        <select name="symbol">
+            {% for sym in symbols %}
+                <option value="{{ sym }}">{{ sym }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Chart Type:</label>
+        <select name="chart_type">
+            <option>Line Chart</option>
+            <option>Bar Chart</option>
+            <option>Candlestick Chart</option>
+        </select><br><br>
+        <label>Time Series:</label>
+        <select name="time_series">
+            <option value="TIME_SERIES_INTRADAY">Intraday</option>
+            <option value="TIME_SERIES_DAILY">Daily</option>
+            <option value="TIME_SERIES_WEEKLY">Weekly</option>
+            <option value="TIME_SERIES_MONTHLY">Monthly</option>
+        </select><br><br>
+        <label>Start Date:</label>
+        <input type="date" name="start_date" required><br><br>
+        <label>End Date:</label>
+        <input type="date" name="end_date" required><br><br>
+        <button type="submit">Visualize</button>
+    </form>
+    <hr>
+</body>
+</html>
